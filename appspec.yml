@@ -1,0 +1,22 @@
+version: 0.0
+os: linux
+files:
+- source: /
+  destination: /opt/youtube-downloader-app
+permissions:
+- object: /opt/youtube-downloader-app/bin
+  pattern: "**"
+  mode: 777
+hooks:
+  AfterInstall:
+    - location: bin/install.sh
+      timeout: 300
+      runas: ubuntu
+  ApplicationStart:
+    - location: bin/app-start.sh
+      timeout: 300
+      runas: ubuntu
+  ApplicationStop:
+    - location: bin/app-stop.sh
+      timeout: 300
+      runas: ubuntu
