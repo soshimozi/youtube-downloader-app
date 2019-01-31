@@ -11,12 +11,9 @@ hooks:
   AfterInstall:
     - location: bin/install.sh
       timeout: 300
-      runas: ubuntu
   ApplicationStart:
     - location: bin/app-start.sh
       timeout: 300
-      runas: ubuntu
   ApplicationStop:
     - location: bin/app-stop.sh
       timeout: 300
-      runas: ubuntu
